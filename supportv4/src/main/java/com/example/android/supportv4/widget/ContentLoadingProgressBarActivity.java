@@ -17,17 +17,14 @@
 package com.example.android.supportv4.widget;
 
 import android.app.Activity;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.TextView;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.widget.ContentLoadingProgressBar;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewTreeObserver;
-import android.view.Window;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.android.supportv4.R;
 
@@ -72,6 +69,7 @@ public class ContentLoadingProgressBarActivity extends Activity implements
         mLastVisibility = mBar.getVisibility();
 
         mBar.getViewTreeObserver().addOnGlobalLayoutListener(this);
+        mBar.getIndeterminateDrawable().setColorFilter(0xFFFF00FF, PorterDuff.Mode.MULTIPLY);
     }
 
     @Override
